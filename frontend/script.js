@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => { //espera a que cargue todo el html antes de ejecutar 
-    const API_BASE_URL = "http://localhost:8000/api"; //define las variables
+    const API_BASE_URL = "http://127.0.0.1:8000/api"; //define las variables
     let selectedController = "hello"; // //define las variables. hello porque es la primera
 
     const messageArea = document.getElementById("message-area");//donde se ven los mensajes
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => { //espera a que cargue todo
             if (!filename || !content) return;
             options = {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json" },//el cuerpo es en formato json
                 body: JSON.stringify({ filename, content }),
             };
         } else if (action === "show") { //muestra el archivo elegido
